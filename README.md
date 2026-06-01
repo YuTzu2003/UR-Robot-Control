@@ -1,6 +1,6 @@
 # UR手臂夾取控制
 
-製作控制UR機械手臂，透過PyQt5製作的GUI控制手臂移動並執行抓取動作。
+製作控制UR機械手臂，透過Tkinter製作的GUI控制手臂移動並執行抓取動作。
 
 ## 專案功能
 - **八向移動控制**：支援前、後、左、右及四個對角線方向的精準移動。
@@ -13,7 +13,7 @@
 ```text
 ├── main.py              # 程式進入點，啟動 GUI 與心跳偵測
 ├── gui/                 # 介面相關程式碼
-│   └── main_window.py   # PyQt5 主視窗設計與 QSS 樣式
+│   └── main_window.py   # Tkinter 主視窗設計與 QSS 樣式
 ├── control/             # 控制邏輯
 │   ├── state_machine.py # 核心狀態機，處理移動與抓取邏輯
 │   ├── motion_commands.py # URScript 指令生成器
@@ -35,7 +35,8 @@
 請在終端機執行以下指令來安裝所需的相依套件：
 
 ```bash
-pip install PyQt5
+pip install Tkinter
+pip install pyModbusTCP
 ```
 
 ## 注意事項
