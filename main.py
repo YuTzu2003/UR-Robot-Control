@@ -1,7 +1,7 @@
 from gui.main_window import MainWindow
 from utils.logger import setup_logger
 import sys
-from PyQt5.QtWidgets import QApplication
+import tkinter as tk
 import threading
 import time
 
@@ -20,9 +20,10 @@ def start_heartbeat(socket_client):
 
 if __name__ == "__main__":
     setup_logger()
-    app = QApplication(sys.argv)
-    window = MainWindow()
+    root = tk.Tk()
+    window = MainWindow(root)
+    # 執行初始化指令
+    window.control_module.handle_initial_command()
     # 啟動心跳檢測
     start_heartbeat(window.control_module.socket_client)
-    window.show()
-    sys.exit(app.exec_())
+    root.mainloop()
